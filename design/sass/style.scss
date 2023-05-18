@@ -1,0 +1,22 @@
+@use '../sass' as *;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 13px;
+    font-family: 'Manrope', sans-serif;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+
+    img,
+    picture,
+    svg {
+        display: block;
+        max-width: 100%; 
+    }
+}
