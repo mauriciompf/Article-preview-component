@@ -21,10 +21,19 @@
   margin-bottom: 1rem;
   color: hsl(217, 19%, 35%);
 }
+.main__author-parent {
+  margin: 0 -1.7rem -2rem;
+  background-color: hsl(217, 19%, 35%);
+}
 .main__author {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.main__author.author_active {
+  background-color: hsl(217, 19%, 35%);
+  margin: 0 1.7rem 1rem;
+  padding: 1rem;
 }
 .main__author-image-container {
   width: 40px;
@@ -50,7 +59,7 @@
   cursor: pointer;
 }
 
-.active {
+.divs-active {
   display: none;
 }
 
