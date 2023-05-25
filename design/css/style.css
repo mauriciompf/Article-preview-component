@@ -10,13 +10,13 @@
   height: 180px;
   width: 100%;
 }
-.main__content {
-  padding: 2rem 1.7rem 1rem;
+.main__text {
+  padding: 2rem 1.7rem 0;
 }
-.main__title {
+.main__text-title {
   margin-bottom: 1rem;
 }
-.main__description {
+.main__text-description {
   line-height: 1.6;
   margin-bottom: 1rem;
   color: hsl(217, 19%, 35%);
@@ -29,14 +29,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 1rem 1.7rem 1rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  transition: all 0.3s ease-in-out;
 }
 .main__author.author_active {
   background-color: hsl(217, 19%, 35%);
-  margin: 0 1.7rem 1rem;
-  padding: 1rem;
 }
 .main__author-image-container {
-  width: 40px;
+  width: 2.5rem;
 }
 .main__author-image-container img {
   border-radius: 50%;
@@ -44,6 +45,24 @@
 .main__author-flex {
   display: flex;
   gap: 1rem;
+  align-items: center;
+  min-height: 2.5rem;
+}
+.main__author-flex a {
+  color: hsl(214, 17%, 51%);
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+.main__author-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.main__author-icons i {
+  font-size: 1.3rem;
+}
+.main__author-icons a {
+  color: hsl(210, 46%, 95%);
 }
 .main__author-info {
   display: flex;
@@ -57,6 +76,8 @@
   border-radius: 50%;
   background-color: hsl(210, 46%, 95%);
   cursor: pointer;
+  border: none;
+  background-color: none;
 }
 
 .divs-active {
@@ -82,6 +103,9 @@ body picture,
 body svg {
   display: block;
   max-width: 100%;
+}
+body a {
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=style.css.map */
