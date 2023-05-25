@@ -14,22 +14,21 @@
         }
 
     &__content {
-        padding: 2rem 1.7rem 1rem;
+        // padding: 2rem 1.7rem 1rem;
     }
 
-    &__title {
-        margin-bottom: 1rem;
-    }
+    &__text {
+        padding: 2rem 1.7rem 0;
 
-    &__description {
-        line-height: 1.6;
-        margin-bottom: 1rem;
-        color: colors.$clr-very-dark-grayish-blue;
-    }
-
-    &__a {
-        // margin: 0 -1.7rem -2rem;
-        // background-color: colors.$clr-very-dark-grayish-blue;
+        &-title {
+            margin-bottom: 1rem;
+        }
+    
+        &-description {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: colors.$clr-very-dark-grayish-blue;
+        }
     }
 
     &__author-parent {
@@ -41,25 +40,16 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-
-        // &::after {
-        //     content: "";
-        //     position: absolute;
-        //     top: 0;
-        //     left: 0;
-        //     right: 0;
-        //     margin: 0 -1.7rem -2rem;
-        //     // background-color: colors.$clr-very-dark-grayish-blue;
-        // }
+        padding: 1rem 1.7rem 1rem;
+        border-radius: 0 0 .5rem .5rem;
+        transition: all .3s ease-in-out;
 
         &.author_active {
             background-color: colors.$clr-very-dark-grayish-blue;
-            margin: 0 1.7rem 1rem;
-            padding: 1rem;
         }
 
         &-image-container {
-            width: 40px;
+            width: 2.5rem;
             
             img {
                 border-radius: 50%;
@@ -69,6 +59,28 @@
         &-flex {
             display: flex;
             gap: 1rem;
+            align-items: center;
+            min-height: 2.5rem;
+
+            a {
+                color: colors.$clr-desaturated-dark-blue;
+                letter-spacing: 0.2rem;
+                text-transform: uppercase;
+            }
+        }
+
+        &-icons {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            i {
+                font-size: 1.3rem;
+            }
+
+            a {
+                color: colors.$clr-light-grayish-blue;
+            }
         }
 
         &-info {
@@ -85,6 +97,8 @@
             border-radius: 50%;
             background-color: colors.$clr-light-grayish-blue;
             cursor: pointer;
+            border: none;
+            background-color: none;
         }
     }
 }
@@ -92,4 +106,3 @@
 .divs-active {
     display: none;
 }
-
