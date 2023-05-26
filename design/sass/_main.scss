@@ -1,20 +1,30 @@
 @use './colors';
+@use '../sass/midia-queries' as *;;
 
 .main {
-    width: min(65ch, 100% - 4rem);
+    width: min(85ch, 100% - 4rem);
     margin-inline: auto;
     border-radius: .5rem;
     background-color: #fff;
 
-    &__image-container img {
-            border-radius: .5rem .5rem 0 0;
-            object-fit: cover;
-            height: 180px;
-            width: 100%;
-        }
+    &__container {
 
-    &__content {
-        // padding: 2rem 1.7rem 1rem;
+        @include desktop {
+            display: flex;
+        }
+    } 
+
+    &__image-container img {
+        border-radius: .5rem .5rem 0 0;
+        object-fit: cover;
+        height: 11.875rem;
+        width: 100%;
+
+        @include desktop {
+            width: auto;
+            height: 100%;
+            border-radius: .5rem 0 0 .5rem;
+        }
     }
 
     &__text {
@@ -43,7 +53,7 @@
         padding: 1rem 1.7rem 1rem;
         border-radius: 0 0 .5rem .5rem;
         transition: all .3s ease-in-out;
-
+        
         &.author_active {
             background-color: colors.$clr-very-dark-grayish-blue;
         }
@@ -104,5 +114,5 @@
 }
 
 .divs-active {
-    display: none;
+        display: none;
 }
