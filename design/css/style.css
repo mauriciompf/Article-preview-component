@@ -4,6 +4,11 @@
   border-radius: 0.5rem;
   background-color: #fff;
 }
+@media screen and (min-width: 768px) {
+  .main__container {
+    display: flex;
+  }
+}
 .main__image-container img {
   border-radius: 0.5rem 0.5rem 0 0;
   object-fit: cover;
@@ -33,8 +38,10 @@
   border-radius: 0 0 0.5rem 0.5rem;
   transition: all 0.3s ease-in-out;
 }
-.main__author.author_active {
-  background-color: hsl(217, 19%, 35%);
+@media screen and (min-width: 768px) {
+  .main__author.author_active {
+    background-color: hsl(217, 19%, 35%);
+  }
 }
 .main__author-image-container {
   width: 2.5rem;
@@ -80,8 +87,10 @@
   background-color: none;
 }
 
-.divs-active {
-  display: none;
+@media screen and (min-width: 768px) {
+  .divs-active {
+    display: none;
+  }
 }
 
 * {
