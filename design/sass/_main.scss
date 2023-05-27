@@ -1,14 +1,20 @@
 @use './colors';
-@use '../sass/midia-queries' as *;;
+@use '../sass/midia-queries' as *;
+
+.flex {
+    display: flex;
+    gap: 1rem;
+}
 
 .main {
     width: min(85ch, 100% - 4rem);
     margin-inline: auto;
     border-radius: .5rem;
-    background-color: #fff;
+    height: 100vh;
+    display: grid;
+    place-items: center;
 
     &__container {
-
         @include desktop {
             display: flex;
         }
@@ -25,6 +31,10 @@
             height: 100%;
             border-radius: .5rem 0 0 .5rem;
         }
+    }
+
+    &__content {
+        background-color: #fff;
     }
 
     &__text {
@@ -47,15 +57,16 @@
     }
 
     &__author {
+        height: 4.375rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 1rem 1.7rem 1rem;
         border-radius: 0 0 .5rem .5rem;
-        transition: all .3s ease-in-out;
-        
-        &.author_active {
-            background-color: colors.$clr-very-dark-grayish-blue;
+        position: relative;
+
+        @include desktop {
+            padding-top: 0;
         }
 
         &-image-container {
@@ -67,29 +78,15 @@
         }
 
         &-flex {
-            display: flex;
-            gap: 1rem;
+            @extend .flex;
             align-items: center;
-            min-height: 2.5rem;
 
-            a {
-                color: colors.$clr-desaturated-dark-blue;
-                letter-spacing: 0.2rem;
-                text-transform: uppercase;
-            }
-        }
+            &.no-active {
+                display: none;
 
-        &-icons {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-
-            i {
-                font-size: 1.3rem;
-            }
-
-            a {
-                color: colors.$clr-light-grayish-blue;
+                @include desktop {
+                    display: flex;
+                }
             }
         }
 
@@ -102,17 +99,107 @@
             color: colors.$clr-very-dark-grayish-blue;
         }
 
+        &-overlay {
+            display: none;
+            
+            &.active {
+                @extend .flex;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                background-color: colors.$clr-very-dark-grayish-blue;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border-radius: 0 0 .5rem .5rem;
+            }
+
+            @include desktop {
+                position: absolute;
+                right: -2rem;
+                bottom: 5.5rem;
+
+                &::after {
+                    right: -1.5rem;
+                    left: -1.5rem;
+                    top: -0.8rem;
+                    height: 26px;
+                    border-radius: 0.5rem;
+                    padding: 0.5rem 1rem;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 33px;
+                    height: 30px;
+                    top: 0.1rem;
+                    left: 4rem;
+                    transform: rotate(45deg);
+                    background-color: colors.$clr-very-dark-grayish-blue;
+                }
+            }
+        }
+
+        &-share {
+            z-index: 10;
+            
+            a {
+                color: colors.$clr-desaturated-dark-blue;
+                letter-spacing: 0.2rem;
+                text-transform: uppercase;
+
+                &:hover,
+                &:focus {
+                    color: colors.$clr-light-grayish-blue;
+                }
+
+                @include desktop {
+                    font-size: .8rem;
+                }
+            }
+        }
+
+        &-icons {
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            i {
+                font-size: 1.3rem;
+                
+                @include desktop {
+                    font-size: 1.1rem;
+                }
+            }
+
+            a {
+                color: colors.$clr-light-grayish-blue;
+
+                &:hover,
+                &:focus {
+                    color: colors.$clr-grayish-blue;
+                }
+            }
+        }
+
         &-icon {
+            z-index: 10;
             padding: .5rem;
             border-radius: 50%;
             background-color: colors.$clr-light-grayish-blue;
             cursor: pointer;
             border: none;
             background-color: none;
+
+            &:hover,
+            &:focus {
+                background-color: colors.$clr-grayish-blue;
+            }
         }
     }
-}
-
-.divs-active {
-        display: none;
 }
